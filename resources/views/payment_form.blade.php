@@ -63,7 +63,7 @@
     // Required in SCA Mandated Regions: Learn more at https://developer.squareup.com/docs/sca-overview
     async function verifyBuyer(payments, token) {
       const verificationDetails = {
-        amount: '1.00',
+        amount: '100',
         billingContact: {
           addressLines: ['123 Main Street', 'Apartment 1'],
           familyName: 'Doe',
@@ -154,7 +154,7 @@
 <body>
   <form id="payment-form">
     <div id="card-container"></div>
-    <button id="card-button" type="button">Pay $1.00</button>
+    <button id="card-button" type="button">Pay $100</button>
   </form>
   <div id="payment-status-container"></div>
 </body>
