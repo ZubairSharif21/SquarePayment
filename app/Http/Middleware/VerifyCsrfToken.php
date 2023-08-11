@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'pay','pay-card','payment','payment/process'
+        'pay','pay-card','payment','payment/process','process-google-pay'
     ];
 }

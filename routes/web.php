@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\GooglePaymentController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('pay-card',[PaymentController::class,'pay_card'])->name('pay');
+
+Route::post('pay-card', [PaymentController::class, 'pay_card'])->name('pay');
 
 
-Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+Route::get('/card/payment', [PaymentController::class, 'showPaymentForm'])->name('card.payment.form');
+Route::view('/google','GooglePay' );
 Route::post('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
+
+
+
+// Route::get('/google/payment', 'PaymentController@showPaymentForm')->name('google-payment-form');
+
+
+
+
+Route::post('/process-google-pay', [GoogleController::class, 'processGooglePay'])->name('process-google-pay');
+

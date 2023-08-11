@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order_Transaction;
 use Illuminate\Http\Request;
 use Square\Models\Builders\AddressBuilder;
 use Square\Models\Builders\ChargeRequestAdditionalRecipientBuilder;
@@ -34,13 +35,6 @@ class PaymentController extends Controller
             ->build();
 
         $paymentsApi = $client->getPaymentsApi();
-        // $body = [
-        //     'source_id' => $request->input('nonce'),
-        //     'amount_money' => [
-        //         'amount' => 100,
-        //         'currency' => 'USD',
-        //     ],
-        // ];
 
         $createPaymentRequest = CreatePaymentRequestBuilder::init(
             $request->input('sourceId'),
@@ -62,4 +56,8 @@ class PaymentController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+
+
+
+
 }
