@@ -25,12 +25,11 @@ Route::post('pay-card', [PaymentController::class, 'pay_card'])->name('pay');
 
 
 Route::get('/card/payment', [PaymentController::class, 'showPaymentForm'])->name('card.payment.form');
-Route::view('/google','GooglePay' );
 Route::post('/payment/process', [PaymentController::class, 'processPayment'])->name('payment.process');
+Route::view('/google','GooglePay' );
 
 
 
-// Route::get('/google/payment', 'PaymentController@showPaymentForm')->name('google-payment-form');
 
 
 

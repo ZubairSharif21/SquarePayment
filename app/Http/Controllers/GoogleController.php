@@ -32,14 +32,13 @@ class GoogleController extends Controller
             )
             ->amountMoney(
                 MoneyBuilder::init()
-                    ->amount(5000) // Amount in cents (50.00 USD)
+                    ->amount($request->input('Price'))
                     ->currency(Currency::USD)
                     ->build()
             )
             ->build();
             try {
                 $response = $paymentsApi->createPayment($createPaymentRequest);
-
                 return response()->json($response->getResult());
             } catch (\Exception $e) {
                 return response()->json(['error' => $e->getMessage()], 500);

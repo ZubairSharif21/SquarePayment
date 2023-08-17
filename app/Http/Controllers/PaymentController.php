@@ -25,8 +25,7 @@ class PaymentController extends Controller
 
     public function processPayment(Request $request)
     {
-        $appId = 'sandbox-sq0idb-Ud3vkCKFahMIRX8u__Jdrw';
-        $locationId = 'L7T1449HFRAC1';
+
         $accessToken = 'EAAAECwPlwKSoryPJBPR_7N2ippN_6Jhf5dbqKAPw9fWJUqFIe813bKLhWXbriNp';
 
         $client = SquareClientBuilder::init()
